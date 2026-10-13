@@ -1,0 +1,34 @@
+# Local environment and caches
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+# Research data, weights, and generated outputs
+/data/
+/results/
+/runs/
+/wandb/
+/tb_logger/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.state
+/datasets/*
+!/datasets/README.md
+!/datasets/data_prepare/
+!/datasets/test/
+/datasets/test/*
+!/datasets/test/README.md
+/experiments/*
+!/experiments/pretrained_models/
+/experiments/pretrained_models/*
+!/experiments/pretrained_models/README.md
