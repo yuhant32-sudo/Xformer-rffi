@@ -39,7 +39,7 @@ requirements.txt                上游依赖列表
 setup.py / setup.cfg / VERSION   上游包配置
 ```
 
-本地论文 PDF、WiSig 数据、模型权重、运行日志和生成结果不纳入本次提交。未来的 RFFI 原始数据与缓存建议放在被忽略的 `data/` 下。
+论文 PDF 和预训练权重等较大文件通过 Releases 中的项目归档提供，不加入普通源码提交。WiSig 数据尚未在本项目中下载、处理。未来的 RFFI 原始数据与缓存建议放在被忽略的 `data/` 下。
 
 ## 预训练＋微调实施计划
 
@@ -131,8 +131,16 @@ cd Xformer-rffi
 ## 来源与引用
 
 - Jiale Zhang et al. **Xformer: Hybrid X-Shaped Transformer for Image Denoising**, ICLR 2024. [论文](https://arxiv.org/abs/2303.06440) · [官方代码](https://github.com/gladzhang/Xformer)
-- **Radio Frequency Fingerprint Identification in Low SNR Based on SCUNet**, IEEE/CIC ICCC 2024：本研究参考的 WVD → SCUNet → ResNet18 流程及迁移微调设置；本文 PDF 未随仓库分发。
+- **Radio Frequency Fingerprint Identification in Low SNR Based on SCUNet**, IEEE/CIC ICCC 2024：本研究参考的 WVD → SCUNet → ResNet18 流程及迁移微调设置；PDF 位于 Releases 的工作目录归档中。
 - **Practical Blind Image Denoising via Swin-Conv-UNet and Data Synthesis**. [SCUNet 官方代码](https://github.com/cszn/SCUNet)
 - [WiSig 数据集](https://cores.ee.ucla.edu/downloads/datasets/wisig/)
 
 本仓库不是 Xformer 官方仓库。上游 README 声明 Apache 2.0，并要求遵守 Restormer 与 BasicSR 的相关许可；来源及本轮修改范围见 [UPSTREAM.md](UPSTREAM.md)。
+
+## 微调学习说明与工作目录归档
+
+- [Xformer 微调原理与 RFFI 实施说明](https://github.com/yuhant32-sudo/Xformer-rffi/blob/main/方案/Xformer微调原理与RFFI实施说明_20261016.md)：全参数微调、冻结、LoRA、身份约束及执行顺序。
+- [2026年10月16日工作目录归档](https://github.com/yuhant32-sudo/Xformer-rffi/releases/tag/workspace-20261016)：最新论文、方案、PPT、代码及预训练权重。
+- [2026年10月14日历史归档](https://github.com/yuhant32-sudo/Xformer-rffi/releases/tag/workspace-20261014)：保留原有快照。
+
+本地研究工作目录的正式文档保存在方案、结果、结果分析、改进方向和汇报ppt文件夹。Code 页保留现有源码布局；完整本地目录布局以 Release 中名为 xformer-workspace 的附件为准。GitHub 自动生成的 Source code 压缩包只包含 Git 提交内容。
